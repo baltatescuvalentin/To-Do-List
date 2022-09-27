@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://kit.fontawesome.com/3ef20e5b59.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <div class="modal_notes_create nonactive">
+            <div class="modal_notes_create_header">
+                <p>Create New Note..</p>
+                <img src="./icons/close.png" alt="close">
+            </div>
+
+            <input type="text" name="create_note_title" id="create_note_title" placeholder="Title...">
+
+            <textarea id="create_note_details" placeholder="Note: when, where, what..."></textarea>
+
+            <button class="add_btn">Add Note</button>
+        </div>
+
+        <div class="modal_notes nonactive">
+            <img src="./icons/close.png" alt="close" class="modal_notes_btn">
+            <div class="notes">
+                <div class="note">
+                    <img src="./icons/close.png" alt="close">
+                    <p>text</p>
+                </div>
+    
+                <div class="note">
+                    <img src="./icons/close.png" alt="close">
+                    <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
+                </div>
+    
+                <div class="note">
+                    <img src="./icons/close.png" alt="close">
+                    <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
+                </div>
+    
+                <div class="note">
+                    <img src="./icons/close.png" alt="close">
+                    <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal_create nonactive">
+            <div class="modal_create_header">
+                <p>Create New Task...</p>
+                <img src="./icons/close.png" alt="close">
+            </div>
+
+            <input type="text" name="create_title" id="create_title" placeholder="Title...">
+
+            <textarea id="create_details" placeholder="Details: when, where, what..."></textarea>
+
+            <span>Due Date: <input type="date" name="create_date" id="create_date"> </span>
+
+            <div class="create_priority">
+                <p>Priority</p> 
+
+                <div class="create_priority_low">LOW</div>
+
+                <div class="create_priority_medium">MEDIUM</div>
+
+                <div class="create_priority_high">HIGH</div>
+
+                <button class="add_btn">Add Task</button>
+            </div>
+
+            
+
+        </div>
+
+        <div class="modal_details nonactive">
+            <img src="./icons/close.png" alt="close">
+            <p>Title: <span>test</span></p>
+            <p>Details: <span>test</span></p>
+            <p>Due Date: <span>12th Dec</span></p>
+            <p>Priority: <span>medium</span></p>
+        </div>
+        <div class="content ">
+            <div class="header">
+                <img src="./icons/to-do-list.png" alt="logo" class="header_icon">
+                <p class="header_text">To-Do List</p>
+            </div>
+
+            <div class="main">
+                <div class="sidebar">
+                    <div class="sidebar_menu">
+                        <img src="./icons/inbox.png" alt="inbox">
+                        <p>Inbox</p>
+                        <p>3</p>
+                    </div>
+
+                    <div class="sidebar_menu">
+                        <img src="./icons/today.png" alt="today">
+                        <p>Today</p>
+                        <p>3</p>
+                    </div>
+
+                    <div class="sidebar_menu">
+                        <img src="./icons/upcoming.png" alt="upcoming">
+                        <p>Upcoming</p>
+                        <p>3</p>
+                    </div>
+
+                    <div class="sidebar_menu">
+                        <img src="./icons/trash.png" alt="trash">
+                        <p>Trash</p>
+                        <p>3</p>
+                    </div>
+
+                    <div class="sidebar_menu">
+                        <div class="sidebar_important"></div>
+                        <p>Important</p>
+                        <p>3</p>
+                    </div>
+
+                    <div class="sidebar_title">
+                        <p class="notes_title">Notes</p>
+                        <img src="./icons/notes.png" alt="notes" class="sidebar_btn">
+                    </div>
+
+                    <div class="sidebar_title">
+                        <p>To Do</p>
+                        <img src="./icons/add.png" alt="add" class="sidebar_btn">
+                    </div>
+                    
+                    <div class="sidebar_subcategories">
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test2</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test2</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test2</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test2</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test2</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test2</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+
+                        <div class="sidebar_subcategories_elem">
+                            <img src="./icons/folder.png" alt="folder">
+                            <p>Test2</p>
+                            <img src="./icons/close.png" alt="close">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="main_content">
+                    <div class="header_main">
+                        <p>Inbox</p>
+                        <div class="sort" id="first_sort">
+                            <p>Sort Date</p>
+                            <img src="./icons/sort.png" alt="sort">
+                        </div>
+                        <div class="sort">
+                            <p>Sort Priority</p>
+                            <img src="./icons/sort.png" alt="sort">
+                        </div>
+                    </div>
+
+                    <div class="add_task">
+                        <img src="./icons/add.png" alt="add task">
+                        <p>Add Task</p>
+                    </div>
+
+                    <div class="task_container">
+                        <div class="priority_low"></div>
+                        <div class="task">
+                            <input type="checkbox" name="finished" id="finished">
+                            <p class="title">Title</p>
+                            <p class="details">Details</p>
+                            <p class="date">Dec 12th</p>
+                            <img src="./icons/edit.png" alt="edit" class="edit">
+                            <img src="./icons/close.png" alt="close" class="close">
+                        </div>
+                    </div>
+
+                    <div class="task_container">
+                        <div class="priority_medium"></div>
+                        <div class="task">
+                            <input type="checkbox" name="finished" id="finished">
+                            <p class="title">Title</p>
+                            <p class="details">Details</p>
+                            <p class="date">Dec 12th</p>
+                            <img src="./icons/edit.png" alt="edit" class="edit">
+                            <img src="./icons/close.png" alt="close" class="close">
+                        </div>
+                    </div>
+
+                    <div class="task_container">
+                        <div class="priority_high"></div>
+                        <div class="task">
+                            <input type="checkbox" name="finished" id="finished">
+                            <p class="title">Title</p>
+                            <p class="details">Details</p>
+                            <p class="date">Dec 12th</p>
+                            <img src="./icons/edit.png" alt="edit" class="edit">
+                            <img src="./icons/close.png" alt="close" class="close">
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <footer>
+                <h3 class="footer_content">Copyright©baltatescuvalentin 
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="https://github.com/baltatescuvalentin" target="_blank">
+                        <i class="fa-brands fa-github" ></i>
+                    </a>
+                </h3>
+            </footer>
+        </div>
+    </body>
+</html>
