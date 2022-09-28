@@ -14,7 +14,7 @@ function formatDate(date) {
 function formatDateFNS(date) {
     const [_year, _month, _day] = formatDate(date);
 
-    let _date = format(new Date(_year, _month, _day), 'MM/DD/YYYY');
+    let _date = format(new Date(_year, _month-1, _day), 'MM/DD/YYYY');
 
     return _date;
 }
@@ -22,12 +22,11 @@ function formatDateFNS(date) {
 const task = (title, details, date, priority, isFinished = false) => {
     let _title = title;
     let _details = details;
+    let _rawDate = date;
     let _priority = priority;
     let _isFinished = isFinished;
 
-    const [_year, _month, _day] = formatDate(date);
-
-    let _date = format(new Date(_year, _month, _day), 'MM/DD/YYYY');
+    let _date = formatDateFNS(date);
 
     const setDate = (date) => _date = date;
     
@@ -49,6 +48,10 @@ const task = (title, details, date, priority, isFinished = false) => {
 
     const getFinished = () => _isFinished;
 
+    const getRawDate = () => _rawDate;
+
+    const setRawDate = (date) => _rawDate = date;
+
     return {
         setDate,
         getDate,
@@ -59,8 +62,14 @@ const task = (title, details, date, priority, isFinished = false) => {
         setPriority,
         getPriority,
         setTitle,
-        getTitle
+        getTitle,
+        getRawDate,
+        setRawDate,
     };
+}
+
+export {
+    formatDate,
 }
 
 export default task;

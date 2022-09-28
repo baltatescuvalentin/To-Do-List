@@ -1,4 +1,4 @@
-
+import createTask from "./viewtask";
 
 function sidebar_subcategories_elem(name) {
     const div = document.createElement('div');
@@ -168,6 +168,7 @@ function createMainContent() {
 
     main_content.appendChild(createMainContentHeader('Inbox'));
     main_content.appendChild(createAddTaskButton());
+    main_content.appendChild(createTask());
 
     return main_content;
 }

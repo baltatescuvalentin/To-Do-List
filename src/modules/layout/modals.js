@@ -73,7 +73,7 @@ function modalNotes() {
     return modal_notes;
 }
 
-function taskDetailsModal(obj) {
+function taskDetailsModal() {
     const div = document.createElement('div');
     div.classList.add('modal_details');
     div.classList.add('active');
@@ -84,10 +84,27 @@ function taskDetailsModal(obj) {
     img.classList.add('details_close_btn');
 
     const p_title = document.createElement('p');
-    p_title.textContent = 'Title: ' + '<span>' + obj.getTitle() + '</span>';
+    p_title.innerHTML = 'Title: ' + '<span>' + 'test' + '</span>';
 
     div.appendChild(img);
     div.appendChild(p_title);
+
+    const p_details = document.createElement('p');
+    p_details.innerHTML = 'Details: ' + '<span>' + 'test' + '</span>';
+
+    div.appendChild(p_details);
+
+    const p_date = document.createElement('p');
+    p_date.innerHTML = 'Due Date: ' + '<span>' + 'test' + '</span>';
+
+    div.appendChild(p_date);
+
+    const p_priority = document.createElement('p');
+    p_priority.innerHTML = 'Priority: ' + '<span>' + 'test' + '</span>';
+
+    div.appendChild(p_priority);
+
+    return div;
 }
 
 function modalTaskCreate() {
@@ -172,4 +189,5 @@ export {
     modalNotesCreate,
     modalNotes,
     modalTaskCreate,
+    taskDetailsModal,
 }
