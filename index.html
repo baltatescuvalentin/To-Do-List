@@ -10,80 +10,80 @@
     </head>
     <body>
 
-        <div class="modal_notes_create nonactive">
-            <div class="modal_notes_create_header">
-                <p>Create New Note..</p>
-                <img src="./icons/close.png" alt="close">
-            </div>
-
-            <input type="text" name="create_note_title" id="create_note_title" placeholder="Title...">
-
-            <textarea id="create_note_details" placeholder="Note: when, where, what..."></textarea>
-
-            <button class="add_btn">Add Note</button>
-        </div>
-
-        <div class="modal_notes nonactive">
-            <img src="./icons/close.png" alt="close" class="modal_notes_btn">
-            <div class="notes">
-                <div class="note">
-                    <img src="./icons/close.png" alt="close">
-                    <p>text</p>
-                </div>
-    
-                <div class="note">
-                    <img src="./icons/close.png" alt="close">
-                    <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
-                </div>
-    
-                <div class="note">
-                    <img src="./icons/close.png" alt="close">
-                    <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
-                </div>
-    
-                <div class="note">
-                    <img src="./icons/close.png" alt="close">
-                    <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal_create nonactive">
-            <div class="modal_create_header">
-                <p>Create New Task...</p>
-                <img src="./icons/close.png" alt="close">
-            </div>
-
-            <input type="text" name="create_title" id="create_title" placeholder="Title...">
-
-            <textarea id="create_details" placeholder="Details: when, where, what..."></textarea>
-
-            <span>Due Date: <input type="date" name="create_date" id="create_date"> </span>
-
-            <div class="create_priority">
-                <p>Priority</p> 
-
-                <div class="create_priority_low">LOW</div>
-
-                <div class="create_priority_medium">MEDIUM</div>
-
-                <div class="create_priority_high">HIGH</div>
-
-                <button class="add_btn">Add Task</button>
-            </div>
-
-            
-
-        </div>
-
-        <div class="modal_details nonactive">
-            <img src="./icons/close.png" alt="close">
-            <p>Title: <span>test</span></p>
-            <p>Details: <span>test</span></p>
-            <p>Due Date: <span>12th Dec</span></p>
-            <p>Priority: <span>medium</span></p>
-        </div>
+        
         <div class="content ">
+
+            <div class="modal_notes_create nonactive">
+                <div class="modal_notes_create_header">
+                    <p>Create New Note..</p>
+                    <img src="./icons/close.png" alt="close">
+                </div>
+    
+                <textarea id="create_note_details" placeholder="Note: when, where, what..."></textarea>
+    
+                <button class="add_btn" id="note_add_btn">Add Note</button>
+            </div>
+    
+            <div class="modal_notes nonactive">
+                <img src="./icons/close.png" alt="close" class="modal_notes_btn">
+                <div class="notes">
+                    <div class="note">
+                        <img src="./icons/close.png" alt="close" class="modal_notes_delete">
+                        <p>text</p>
+                    </div>
+        
+                    <div class="note">
+                        <img src="./icons/close.png" alt="close" class="modal_notes_delete">
+                        <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
+                    </div>
+        
+                    <div class="note">
+                        <img src="./icons/close.png" alt="close" class="modal_notes_delete">
+                        <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
+                    </div>
+        
+                    <div class="note">
+                        <img src="./icons/close.png" alt="close" class="modal_notes_delete">
+                        <p>text text text text text text text text text text text text text text text text text text text text text text text text </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="modal_create nonactive">
+                <div class="modal_create_header">
+                    <p>Create New Task...</p>
+                    <img src="./icons/close.png" alt="close" class="modal_task_close_btn">
+                </div>
+    
+                <input type="text" name="create_title" id="create_title" placeholder="Title...">
+    
+                <textarea id="create_details" placeholder="Details: when, where, what..."></textarea>
+    
+                <span>Due Date: <input type="date" name="create_date" id="create_date"> </span>
+    
+                <div class="create_priority">
+                    <p>Priority</p> 
+    
+                    <div class="create_priority_low ">LOW</div>
+    
+                    <div class="create_priority_medium">MEDIUM</div>
+    
+                    <div class="create_priority_high">HIGH</div>
+    
+                    <button class="add_btn" id="task_add_btn">Add Task</button>
+                </div>
+    
+                
+    
+            </div>
+    
+            <div class="modal_details nonactive">
+                <img src="./icons/close.png" alt="close" class="details_close_btn">
+                <p>Title: <span>test</span></p>
+                <p>Details: <span>test</span></p>
+                <p>Due Date: <span>12th Dec</span></p>
+                <p>Priority: <span>medium</span></p>
+            </div>
             <div class="header">
                 <img src="./icons/to-do-list.png" alt="logo" class="header_icon">
                 <p class="header_text">To-Do List</p>
@@ -185,11 +185,11 @@
                 <div class="main_content">
                     <div class="header_main">
                         <p>Inbox</p>
-                        <div class="sort" id="first_sort">
+                        <div class="sort" id="date_sort">
                             <p>Sort Date</p>
                             <img src="./icons/sort.png" alt="sort">
                         </div>
-                        <div class="sort">
+                        <div class="sort" id="priority_sort">
                             <p>Sort Priority</p>
                             <img src="./icons/sort.png" alt="sort">
                         </div>
