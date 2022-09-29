@@ -1,3 +1,5 @@
+import task from "../func/task";
+import { priorityButton, submitTaskBtn, closeModal, submitNoteBtn } from "../func/logic";
 
 function createNote(text) {
     const div = document.createElement('div');
@@ -20,7 +22,7 @@ function createNote(text) {
 function modalNotesCreate() {
     const modal = document.createElement('div');
     modal.classList.add('modal_notes_create');
-    modal.classList.add('active');
+    modal.classList.add('nonactive');
 
     const header = document.createElement('div');
     header.classList.add('modal_notes_create_header');
@@ -32,6 +34,9 @@ function modalNotesCreate() {
     img.src = './icons/close.png';
     img.alt = 'close';
     img.classList.add('modal_notes_close_btn');
+    img.onclick = () => {
+        closeModal('notes_create')
+    }
 
     header.appendChild(p_header);
     header.appendChild(img);
@@ -45,6 +50,7 @@ function modalNotesCreate() {
     button.classList.add('add_btn');
     button.setAttribute('id', 'note_add_btn');
     button.textContent = 'Add Note';
+    button.onclick = submitNoteBtn;
 
     modal.appendChild(header);
     modal.appendChild(details);
@@ -73,44 +79,85 @@ function modalNotes() {
     return modal_notes;
 }
 
-function taskDetailsModal() {
+// function taskDetailsModal() {
+//     const div = document.createElement('div');
+//     div.classList.add('modal_details');
+//     div.classList.add('nonactive');
+
+//     const img = document.createElement('img');
+//     img.src = './icons/close.png'
+//     img.alt = 'close';
+//     img.classList.add('details_close_btn');
+
+//     const p_title = document.createElement('p');
+//     p_title.innerHTML = 'Title: ' + '<span>' + 'test' + '</span>';
+
+//     div.appendChild(img);
+//     div.appendChild(p_title);
+
+//     const p_details = document.createElement('p');
+//     p_details.innerHTML = 'Details: ' + '<span>' + 'test' + '</span>';
+
+//     div.appendChild(p_details);
+
+//     const p_date = document.createElement('p');
+//     p_date.innerHTML = 'Due Date: ' + '<span>' + 'test' + '</span>';
+
+//     div.appendChild(p_date);
+
+//     const p_priority = document.createElement('p');
+//     p_priority.innerHTML = 'Priority: ' + '<span>' + 'test' + '</span>';
+
+//     div.appendChild(p_priority);
+
+//     return div;
+// }
+
+
+
+function taskDetailsModal(obj) {
     const div = document.createElement('div');
     div.classList.add('modal_details');
-    div.classList.add('active');
+    div.classList.add('nonactive');
 
     const img = document.createElement('img');
     img.src = './icons/close.png'
     img.alt = 'close';
     img.classList.add('details_close_btn');
+    img.onclick = () => {
+        closeModal('details');
+    }
 
     const p_title = document.createElement('p');
-    p_title.innerHTML = 'Title: ' + '<span>' + 'test' + '</span>';
+    p_title.innerHTML = 'Title: ' + '<span>' + obj.getTitle() + '</span>';
 
     div.appendChild(img);
     div.appendChild(p_title);
 
     const p_details = document.createElement('p');
-    p_details.innerHTML = 'Details: ' + '<span>' + 'test' + '</span>';
+    p_details.innerHTML = 'Details: ' + '<span>' + obj.getDetails() + '</span>';
 
     div.appendChild(p_details);
 
     const p_date = document.createElement('p');
-    p_date.innerHTML = 'Due Date: ' + '<span>' + 'test' + '</span>';
+    p_date.innerHTML = 'Due Date: ' + '<span>' + obj.getDate() + '</span>';
 
     div.appendChild(p_date);
 
     const p_priority = document.createElement('p');
-    p_priority.innerHTML = 'Priority: ' + '<span>' + 'test' + '</span>';
+    p_priority.innerHTML = 'Priority: ' + '<span>' + obj.getPriority() + '</span>';
 
     div.appendChild(p_priority);
 
     return div;
 }
 
+
+
 function modalTaskCreate() {
     const div = document.createElement('div');
     div.classList.add('modal_create');
-    div.classList.add('active');
+    div.classList.add('nonactive');
 
     const header = document.createElement('div');
     header.classList.add('modal_create_header');
@@ -122,6 +169,9 @@ function modalTaskCreate() {
     img.src = './icons/close.png';
     img.alt = 'close';
     img.classList.add('modal_task_close_btn');
+    img.onclick = () => {
+        closeModal('create');
+    };
 
     header.appendChild(p_header);
     header.appendChild(img);
@@ -140,6 +190,7 @@ function modalTaskCreate() {
     button.classList.add('add_btn');
     button.setAttribute('id', 'task_add_btn');
     button.textContent = 'Add Task'; 
+    button.onclick = submitTaskBtn;
 
     const priority = document.createElement('div');
     priority.classList.add('create_priority');
@@ -149,15 +200,21 @@ function modalTaskCreate() {
 
     const low = document.createElement('div');
     low.classList.add('create_priority_low');
+    low.setAttribute('id', 'low');
     low.textContent = 'LOW';
+    low.onclick = priorityButton;
 
     const medium = document.createElement('div');
     medium.classList.add('create_priority_medium');
+    medium.setAttribute('id', 'medium');
     medium.textContent = 'MEDIUM';
+    medium.onclick = priorityButton;
 
     const high = document.createElement('div');
     high.classList.add('create_priority_high');
+    high.setAttribute('id', 'high');
     high.textContent = 'HIGH';
+    high.onclick = priorityButton;
 
     priority.appendChild(p_priority);
     priority.appendChild(low);

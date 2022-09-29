@@ -476,7 +476,7 @@ footer {
 
 #create_details, #create_note_details {
     font-size: 24px;
-    width: 600px;
+    width: 595px;
     overflow-wrap: break-word;
     height: 6em;
     resize: none;

@@ -1,4 +1,4 @@
-import createTask from "./viewtask";
+import { openTaskModal, openModal, openNotes } from "../func/logic";
 
 function sidebar_subcategories_elem(name) {
     const div = document.createElement('div');
@@ -25,6 +25,7 @@ function sidebar_subcategories_elem(name) {
 function sidebar_menu(name) {
     const sidebarMenu = document.createElement('div');
     sidebarMenu.classList.add('sidebar_menu');
+    sidebarMenu.setAttribute('id', `${name}`);
 
     const img = document.createElement('img');
     img.src = `./icons/${name}.png`;
@@ -35,6 +36,7 @@ function sidebar_menu(name) {
     p.textContent = upperName;
 
     const empty_p = document.createElement('p');
+    empty_p.classList.add('numberOf');
 
     sidebarMenu.appendChild(img);
     sidebarMenu.appendChild(p);
@@ -75,10 +77,14 @@ function createSidebar() {
     const notes_title = document.createElement('p');
     notes_title.classList.add('notes_title');
     notes_title.textContent = "Notes";
+    notes_title.onclick = openNotes;
 
     const notes_img = document.createElement('img');
     notes_img.src = "./icons/notes.png";
     notes_img.alt = "notes";
+    notes_img.onclick = () => {
+        openModal('notes_create')
+    };
 
     notes.appendChild(notes_title);
     notes.appendChild(notes_img);
@@ -157,6 +163,10 @@ function createAddTaskButton() {
     div.appendChild(img);
     div.appendChild(p);
 
+    div.onclick = () => {
+        openModal('create')
+    };
+
     return div;
 }
 
@@ -168,7 +178,6 @@ function createMainContent() {
 
     main_content.appendChild(createMainContentHeader('Inbox'));
     main_content.appendChild(createAddTaskButton());
-    main_content.appendChild(createTask());
 
     return main_content;
 }

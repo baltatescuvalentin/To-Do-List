@@ -14,12 +14,12 @@ function formatDate(date) {
 function formatDateFNS(date) {
     const [_year, _month, _day] = formatDate(date);
 
-    let _date = format(new Date(_year, _month-1, _day), 'MM/DD/YYYY');
+    let _date = format(new Date(_year, _month-1, _day), 'MM/dd/yyyy');
 
     return _date;
 }
 
-const task = (title, details, date, priority, isFinished = false) => {
+let task = (title, details, date, priority, isFinished = false) => {
     let _title = title;
     let _details = details;
     let _rawDate = date;
@@ -70,6 +70,7 @@ const task = (title, details, date, priority, isFinished = false) => {
 
 export {
     formatDate,
+    formatDateFNS
 }
 
 export default task;

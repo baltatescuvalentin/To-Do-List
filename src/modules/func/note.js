@@ -1,7 +1,7 @@
 
 
 
-const note = (details) => {
+let note = (details) => {
     let _details = details;
 
     const getDetails = () => _details;
@@ -9,3 +9,4 @@ const note = (details) => {
     return { getDetails };
 }
 
+export default note;

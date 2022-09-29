@@ -1,12 +1,19 @@
+import { showDetails, openModal } from "../func/logic";
+import task from "../func/task";
 
+function createTask(obj) {
 
+    const priorityDict = {
+        'low': 'clicked_low',
+        'medium': 'clicked_medium',
+        'high': 'clicked_high'
+    };
 
-function createTask() {
     const container = document.createElement('div');
     container.classList.add('task_container');
 
     const priority = document.createElement('div');
-    priority.classList.add('priority_low');
+    priority.classList.add(`${priorityDict[obj.getPriority()]}`);
 
     const task = document.createElement('div');
     task.classList.add('task');
@@ -18,15 +25,19 @@ function createTask() {
 
     const title = document.createElement('p');
     title.classList.add('title');
-    title.textContent = 'Title';
+    title.textContent = `${obj.getTitle()}`;
 
     const details = document.createElement('p');
     details.classList.add('details');
     details.textContent = 'Details';
+    details.onclick = (e) => {
+        showDetails(e),
+        openModal('details')
+    };
 
     const date = document.createElement('p');
     date.classList.add('date');
-    date.textContent = '12/12/2022';
+    date.textContent = `${obj.getDate()}`;
 
     const edit = document.createElement('img');
     edit.src = './icons/edit.png';

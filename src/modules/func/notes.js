@@ -1,7 +1,7 @@
 
 
 
-const notes = () => {
+let notes = () => {
     let _notes = [];
 
     const addNote = (note) => {
@@ -21,10 +21,13 @@ const notes = () => {
         return _notes.find((n) => n.getDetails() === details);
     }
 
+    const getNotes = () => _notes;
+
     return {
         addNote,
         removeNote,
         getNote,
+        getNotes,
     }
 }
 
