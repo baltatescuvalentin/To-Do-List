@@ -1,4 +1,4 @@
-import { openTaskModal, openModal, openNotes } from "../func/logic";
+import { openModal, openNotes, submitNoteBtn } from "../func/logic";
 
 function sidebar_subcategories_elem(name) {
     const div = document.createElement('div');
@@ -77,7 +77,9 @@ function createSidebar() {
     const notes_title = document.createElement('p');
     notes_title.classList.add('notes_title');
     notes_title.textContent = "Notes";
-    notes_title.onclick = openNotes;
+    notes_title.onclick = () => {
+        openNotes()
+    };
 
     const notes_img = document.createElement('img');
     notes_img.src = "./icons/notes.png";
@@ -137,7 +139,7 @@ function createMainContentHeader(name) {
     div.classList.add('header_main');
 
     const title = document.createElement('p');
-    title.textContent = `${name}`;
+    title.textContent = `${name.charAt(0).toUpperCase() + name.slice(1)}`;
 
     const sort = createSort('Sort Date', 'date_sort', 'sort by date');
     const sort2 = createSort('Sort Priority', 'priority_sort', 'sort by priority');

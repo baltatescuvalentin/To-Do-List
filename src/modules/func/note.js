@@ -6,7 +6,14 @@ let note = (details) => {
 
     const getDetails = () => _details;
 
-    return { getDetails };
+    const setDetails = (details) => {
+        _details = details;
+    }
+
+    return { 
+        getDetails, 
+        setDetails,
+    };
 }
 
 export default note;

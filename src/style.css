@@ -500,7 +500,7 @@ footer {
 .notes {
     column-count: 3;
     column-gap: 1.875em;
-    column-fill: auto;
+    column-fill: balance;
 }
 
 .note {

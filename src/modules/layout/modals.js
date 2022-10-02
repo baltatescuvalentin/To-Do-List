@@ -50,7 +50,9 @@ function modalNotesCreate() {
     button.classList.add('add_btn');
     button.setAttribute('id', 'note_add_btn');
     button.textContent = 'Add Note';
-    button.onclick = submitNoteBtn;
+    button.onclick = () => {
+        submitNoteBtn()
+    };
 
     modal.appendChild(header);
     modal.appendChild(details);
@@ -69,6 +71,9 @@ function modalNotes() {
     img.src = './icons/close.png';
     img.alt = 'close';
     img.classList.add('modal_notes_btn');
+    img.onclick = () => {
+        closeModal('notes')
+    };
 
     const notes = document.createElement('div');
     notes.classList.add('notes');

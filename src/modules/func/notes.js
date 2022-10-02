@@ -1,3 +1,4 @@
+import note from "./note";
 
 
 
@@ -6,7 +7,7 @@ let notes = () => {
 
     const addNote = (note) => {
         if(existNote(note) === false)
-            _notes.push(note)
+            _notes.push(note);
     };
 
     const removeNote = (note) => {
