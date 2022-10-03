@@ -3,8 +3,10 @@ import tasks from './tasks';
 import notes from './notes';
 import createTask from '../layout/viewtask';
 import { taskDetailsModal, createNote } from '../layout/modals';
- import note from './note';
+import note from './note';
 import { createAddTaskButton, createMainContentHeader } from '../layout/main';
+import storage from './storage';
+import todoList from './todolist';
 
 let inbox = tasks('Inbox');
 let notesSide = notes();
@@ -19,6 +21,7 @@ function openModal(name) {
     const createModal = document.querySelector(`.modal_${name}`);
     createModal.classList.remove('nonactive');
     createModal.classList.add('active');
+
 }
 
 function closeModal(name) {
@@ -117,6 +120,15 @@ function submitTaskBtn() {
     updateNumberOfTasks('inbox');
     emptyMainContent('inbox');
     loadTasks('inbox');
+    let todolist = todoList();
+    todolist.addInList(inbox);
+    let s = storage();
+    s.saveList(todolist);
+    console.log(`s este: ${s}`);
+    let x = s.getList();
+    console.log(`x este: ${x}`);
+    console.log(inbox);
+    console.log(JSON.stringify(inbox.getTasks()));
 }
 
 function emptyMainContent(name) {
